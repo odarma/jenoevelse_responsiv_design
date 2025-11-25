@@ -10,6 +10,7 @@
    Grunninnstillinger for HTML-elementet (kan utvides ved behov)
 ----------------------------------------------------- */
 html {
+   font-size: calc(1rem);
 }
 
 /* -----------------------------------------------------
@@ -45,12 +46,14 @@ nav {
    - Svart tekstfarge for kontrast
 ----------------------------------------------------- */
 nav #logo {
+   display: flex;
     font-size: 25px;
     margin-bottom: 1rem;
     font-weight: 900;
     letter-spacing: -5px;
     text-decoration: none;
     color: #000;
+    justify-content: center;
 }
 
 /* -----------------------------------------------------
@@ -85,6 +88,8 @@ nav ul li a {
 main section:nth-child(odd) {
     background-color: #1e4772;
     color: #fff;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* -----------------------------------------------------
@@ -93,6 +98,19 @@ main section:nth-child(odd) {
 ----------------------------------------------------- */
 main section section {
     padding: 0rem 3rem;
+}
+
+#change-order{
+   flex-wrap: nowrap;
+}
+#change-order section{
+   height: auto;
+   width: auto;
+   position: relative;
+   
+}
+#change-order picture{
+   position: relative;
 }
 
 /* -----------------------------------------------------
@@ -224,4 +242,35 @@ h2 {
 ----------------------------------------------------- */
 #some i {
     font-size: 40px;
+}
+
+@media only screen and (min-width:680px) {
+nav{
+   display: flex;
+}
+
+nav #logo {
+   font-size: 25px;
+   margin-bottom: 1rem;
+   font-weight: 900;
+   letter-spacing: -5px;
+   text-decoration: none;
+   color: #000;
+   justify-content: left;
+}
+nav ul {
+   width: 100%;
+   justify-content: right;
+   display: flex;
+   padding: 0;
+   margin: 0;
+   list-style: none;
+   text-align: right;
+}
+nav ul li a {
+   display: block;
+   padding: 0.5rem 1rem;
+   text-decoration: none;
+   color: #000;
+}
 }
