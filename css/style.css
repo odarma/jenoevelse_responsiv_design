@@ -88,29 +88,36 @@ nav ul li a {
 main section:nth-child(odd) {
     background-color: #1e4772;
     color: #fff;
-    display: flex;
-    flex-wrap: wrap;
 }
-
+main section{
+   display: flex;
+   flex-wrap: wrap;
+}
 /* -----------------------------------------------------
    Indre seksjoner i main får horisontal padding
    for bedre luft rundt tekst.
 ----------------------------------------------------- */
 main section section {
-    padding: 0rem 3rem;
+   padding: 0rem 3rem;
+   align-self: center;
 }
-
-#change-order{
-   flex-wrap: nowrap;
+main section picture{
+   height: auto;
+   width: 100%; 
+}
+main section picture img{
+   height: auto;
+   width: 100%; 
+}
+#change-order {
+   height: 100%;
 }
 #change-order section{
-   height: auto;
-   width: auto;
-   position: relative;
-   
+   order: 2;
 }
 #change-order picture{
-   position: relative;
+   order: 1;
+   font-size: 0;
 }
 
 /* -----------------------------------------------------
@@ -132,7 +139,15 @@ main section section {
    - Gir rikelig med padding rundt innholdet
 ----------------------------------------------------- */
 #tjenester {
-    padding: 3rem;
+   padding: 3rem;
+}
+#tjenester section{
+   width: 100%;
+   height: 50%;
+}
+#tjenester section article{
+   height: auto;
+   width: 100%;
 }
 
 /* -----------------------------------------------------
@@ -244,33 +259,72 @@ h2 {
     font-size: 40px;
 }
 
-@media only screen and (min-width:680px) {
-nav{
-   display: flex;
-}
+@media only screen and (min-width:1100px) {
+   nav{
+      display: flex;
+   }
 
-nav #logo {
-   font-size: 25px;
-   margin-bottom: 1rem;
-   font-weight: 900;
-   letter-spacing: -5px;
-   text-decoration: none;
-   color: #000;
-   justify-content: left;
-}
-nav ul {
-   width: 100%;
-   justify-content: right;
-   display: flex;
-   padding: 0;
-   margin: 0;
-   list-style: none;
-   text-align: right;
-}
-nav ul li a {
-   display: block;
-   padding: 0.5rem 1rem;
-   text-decoration: none;
-   color: #000;
-}
+   nav #logo {
+      font-size: 25px;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      letter-spacing: -5px;
+      text-decoration: none;
+      color: #000;
+      justify-content: left;
+   }
+   nav ul {
+      width: 100%;
+      justify-content: right;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-align: right;
+   }
+   nav ul li a {
+      display: block;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      color: #000;
+   }
+
+   main section{
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   main section section {
+      width: 50%; 
+      justify-content: left;
+      padding: 0rem 3rem;
+   }
+   main section picture{
+      width: 50%; 
+   }
+   main section picture img{
+      height: 100%;
+   }
+
+   #change-order section{
+      order: 1;
+   }
+   #change-order picture{
+      order: 2;
+   }
+
+   .btn {
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      margin: 1rem 0;  
+   }
+   #tjenester section {
+      flex-wrap: nowrap;
+      padding: 0%;
+      
+   }
+   #tjenester{
+      justify-content: space-evenly;
+   }
 }
